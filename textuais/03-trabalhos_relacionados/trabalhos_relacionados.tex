@@ -1,0 +1,82 @@
+%%
+%% Capítulo 3: Trabalhos relacionados
+%%
+
+\mychapter{Trabalhos relacionados}
+\label{Cap:TrabalhosRelacionados}
+
+Este capítulo apresenta uma análise crítica de trabalhos acadêmicos e soluções comerciais existentes na área de controle de acesso com RFID e IoT. O objetivo é identificar as limitações das abordagens atuais e posicionar a contribuição deste trabalho no contexto do estado da arte.
+
+\section{Estudos Anteriores em Controle de Acesso RFID}
+\label{Sec:EstudosAnteriores}
+
+Diversos pesquisadores têm proposto soluções para modernização de sistemas de controle de acesso. Estudos recentes demonstram que sistemas completos de controle de acesso baseados em RFID podem ser implementados de forma eficaz, porém muitas soluções exigem a substituição completa dos equipamentos existentes, tornando-as inviáveis para instituições com orçamento limitado.
+
+Um trabalho relevante foi desenvolvido por pesquisadores da UFMG sobre integração de sistemas legados com IoT \cite{santos-iot-2016}. Embora apresentem conceitos importantes sobre arquiteturas híbridas, sua abordagem focava principalmente em ambientes industriais com protocolos Modbus e OPC, não sendo diretamente aplicável a sistemas de controle de acesso RFID proprietários.
+
+\subsection{Limitações das Abordagens Existentes}
+
+A maioria dos trabalhos encontrados na literatura apresenta uma ou mais das seguintes limitações:
+
+\begin{itemize}
+\item \textbf{Alto custo de implementação:} Soluções que exigem substituição completa de hardware
+\item \textbf{Dependência de fabricante:} Sistemas que funcionam apenas com equipamentos específicos
+\item \textbf{Complexidade técnica:} Requerem conhecimento especializado para instalação e manutenção
+\item \textbf{Ausência de fallback:} Não mantêm operação offline em caso de falhas
+\end{itemize}
+
+\section{Soluções Comerciais Disponíveis}
+\label{Sec:SolucoesComerciais}
+
+No mercado brasileiro, existem diversas soluções comerciais para controle de acesso com conectividade. Empresas como Control ID, Intelbras e Henry oferecem sistemas completos que incluem leitores biométricos, RFID e integração em rede. No entanto, estas soluções apresentam custos elevados, com equipamentos individuais variando de R\$ 2.000 a R\$ 5.000, além de requererem licenças de software proprietário.
+
+A controladora DigiProx SA-202, objeto deste estudo, representa uma categoria de equipamentos amplamente instalados em pequenas e médias instituições. Com custo aproximado de R\$ 300, oferece funcionalidade básica de controle de acesso porém sem nenhuma conectividade ou capacidade de geração de relatórios.
+
+\subsection{Análise de Custo-Benefício}
+
+A substituição de controladoras legadas por sistemas modernos conectados representa um investimento significativo. Para um laboratório universitário com 10 portas, o custo de modernização completa poderia facilmente ultrapassar R\$ 30.000, considerando equipamentos, instalação e licenças de software.
+
+Em contraste, a solução proposta neste trabalho, baseada em componentes de código aberto (Arduino, ESP8266) e serviços gratuitos (Firebase), apresenta um custo estimado inferior a R\$ 200 por porta, representando uma economia superior a 90\% em relação às soluções comerciais.
+
+\section{Projetos de Código Aberto Relacionados}
+\label{Sec:ProjetosCodigoAberto}
+
+A comunidade de código aberto tem desenvolvido diversos projetos relacionados a controle de acesso RFID. O projeto "ESP-RFID" no GitHub oferece uma solução baseada em ESP8266 para leitura de tags Mifare, porém focada em tags de 13.56 MHz, não sendo compatível com sistemas de 125 kHz como a DigiProx SA-202.
+
+Outro projeto relevante é o "Access Control System" desenvolvido pela comunidade Arduino, que implementa um sistema completo de controle de acesso. Entretanto, este projeto assume a construção de um sistema novo, não contemplando a integração com equipamentos legados.
+
+\subsection{Lacunas Identificadas}
+
+A análise dos projetos open source existentes revela uma lacuna importante: não há soluções focadas especificamente na modernização não invasiva de controladoras legadas. A maioria dos projetos:
+
+\begin{itemize}
+\item Assume a construção de sistemas novos do zero
+\item Não considera a preservação de equipamentos existentes
+\item Foca em tecnologias específicas (Mifare, NFC) incompátveis com sistemas legados
+\item Não oferece mecanismos de fallback para operação offline
+\end{itemize}
+
+\section{Relação com o Problema Proposto}
+\label{Sec:RelacaoProblema}
+
+A revisão dos trabalhos relacionados evidencia que o problema abordado nesta pesquisa - modernização não invasiva de controladoras legadas em laboratórios universitários - não foi adequadamente tratado pela literatura existente ou por soluções comerciais.
+
+Os laboratórios da FAENG/UFMT, equipados com controladoras DigiProx SA-202, representam um cenário comum em instituições educacionais brasileiras: equipamentos funcionais mas sem conectividade, orçamento limitado para substituição completa, e necessidade crescente de monitoramento e controle centralizado.
+
+A solução proposta neste trabalho preenche exatamente esta lacuna, oferecendo:
+
+\begin{itemize}
+\item Preservação do investimento em equipamentos existentes
+\item Custo de implementação inferior a 10\% das soluções comerciais
+\item Manutenção da operação offline como fallback de segurança
+\item Flexibilidade para evolução futura sem dependência de fornecedores
+\end{itemize}
+
+\section{Síntese e Posicionamento do Trabalho}
+\label{Sec:SintesePosicionamento}
+
+A análise dos trabalhos relacionados demonstra que existe uma lacuna significativa entre as soluções acadêmicas propostas e as necessidades reais de instituições com recursos limitados. Enquanto a literatura foca em arquiteturas complexas e soluções idealizadas, o mercado oferece apenas opções de alto custo que exigem substituição completa de infraestrutura.
+
+Este trabalho se posiciona como uma solução pragmática e viável, demonstrando que é possível modernizar sistemas legados com investimento mínimo e sem comprometer a confiabilidade. A abordagem de interceptação paralela de sinais RFID, mantendo o sistema original intacto, representa uma contribuição original que pode ser replicada em diversos contextos similares.
+
+A validação prática desta proposta, detalhada nos capítulos seguintes, demonstra não apenas sua viabilidade técnica, mas também seu potencial de impacto social ao democratizar o acesso a tecnologias de monitoramento e controle para instituições com orçamento restrito.

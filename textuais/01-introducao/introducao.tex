@@ -1,0 +1,68 @@
+%%
+%% Capítulo 1: Introdução
+%%
+
+\mychapter{Introdução}
+\label{Cap:Introducao}
+
+O controle de acesso físico é uma necessidade fundamental em diversos ambientes, desde residências e empresas até instituições de ensino e órgãos governamentais. Com o avanço da tecnologia, os sistemas tradicionais de controle de acesso baseados em chaves  têm sido gradualmente substituídos por soluções eletrônicas mais sofisticadas, que oferecem maior segurança, praticidade e capacidade de auditoria. Entre essas tecnologias, destaca-se a identificação por radiofrequência (RFID), que permite o reconhecimento automático e sem contato de tags ou cartões, tornando o processo de autenticação mais ágil e eficiente.
+
+Apesar dos benefícios oferecidos pelos sistemas eletrônicos de controle de acesso, muitas instalações ainda utilizam controladoras legadas que, embora funcionais, carecem de recursos modernos como conectividade à internet, armazenamento em nuvem e monitoramento remoto. A substituição completa desses sistemas frequentemente representa um investimento significativo, não apenas em hardware, mas também em instalação e treinamento, o que pode ser proibitivo para muitas organizações.
+
+Neste contexto, surge a necessidade de soluções que permitam modernizar sistemas existentes sem comprometer sua funcionalidade original. Este trabalho apresenta o desenvolvimento de um sistema que adiciona capacidades de Internet das Coisas (IoT) a uma controladora de acesso RFID tradicional, especificamente o modelo DigiProx SA-202, permitindo o registro e monitoramento remoto de acessos através da plataforma Firebase.
+
+\section{Motivação}
+
+A motivação principal deste projeto surgiu da observação de uma limitação prática em um ambiente real de uso. A controladora DigiProx SA-202, instalada em uma porta de acesso, funcionava adequadamente para seu propósito básico de controlar a fechadura eletrônica mediante a apresentação de tags RFID autorizadas. No entanto, a ausência de conectividade limitava severamente as possibilidades de gestão e análise dos dados de acesso.
+
+A controladora original não mantém registros das leituras\footnote{A DigiProx SA-202 armazena apenas as configurações de usuários autorizados, mas não registra histórico de acessos.}, deixando sem a possibilidade de exportação ou análise de histórico. Essa limitação impossibilita a identificação de padrões de uso, a geração de relatórios de acesso e o monitoramento em tempo real, recursos cada vez mais necessários em ambientes que demandam maior controle de segurança.
+
+Além disso, a crescente adoção de tecnologias IoT em diversos setores demonstra o valor da conectividade e do processamento de dados em nuvem. A capacidade de acessar informações remotamente, receber notificações em tempo real e integrar diferentes sistemas tornou-se não apenas desejável, mas muitas vezes essencial para a gestão eficiente de recursos e segurança.
+
+\section{Objetivos e Contribuições}
+
+Este trabalho teve como objetivo principal desenvolver uma solução de baixo custo para adicionar conectividade IoT a sistemas de controle de acesso RFID existentes, sem interferir em seu funcionamento original. Para alcançar esse objetivo, foi necessário superar diversos desafios técnicos, desde a análise reversa do hardware existente até a implementação de protocolos de comunicação seguros com serviços em nuvem.
+
+As principais contribuições deste trabalho incluem:
+
+\begin{itemize}
+    \item Desenvolvimento de uma arquitetura de interceptação paralela de sinais RFID que preserva a integridade do sistema original;
+    \item Implementação de um protocolo de comunicação eficiente entre microcontroladores de diferentes gerações;
+    \item Criação de uma solução de integração com Firebase que permite armazenamento e análise de dados em tempo real;
+    \item Demonstração prática de que é possível modernizar sistemas legados com investimento mínimo;
+    \item Documentação detalhada do processo, servindo como guia para projetos similares.
+\end{itemize}
+
+\section{Metodologia}
+
+A metodologia adotada neste projeto seguiu uma abordagem incremental, iniciando com a análise detalhada do sistema existente e evoluindo através de protótipos sucessivos até a solução final. O processo começou com a tentativa de integração direta com o microcontrolador da controladora SA-202, mas devido a barreiras técnicas significativas, como documentação em idioma chinês e necessidade de equipamentos especializados não disponíveis, foi necessário adotar uma estratégia alternativa.
+
+A solução desenvolvida utilizou um módulo leitor RFID RDM6300 operando em paralelo com o sistema original, conectado a um Arduino Uno para processamento inicial dos dados. Posteriormente, um módulo ESP8266 foi integrado para prover conectividade Wi-Fi e comunicação com o Firebase. Essa arquitetura modular permitiu o desenvolvimento e teste independente de cada componente, facilitando a identificação e correção de problemas.
+
+Todos os experimentos foram conduzidos em ambiente controlado, com testes extensivos para validar a confiabilidade e o desempenho do sistema. As métricas de avaliação incluíram taxa de leitura bem-sucedida, latência de transmissão, disponibilidade do sistema e capacidade de operação paralela sem interferências.
+
+\section{Estrutura do Trabalho}
+
+Este trabalho está organizado em sete capítulos, estruturados de forma a apresentar progressivamente o desenvolvimento do projeto desde sua fundamentação teórica até as conclusões finais.
+
+O Capítulo \ref{Cap:Teoria} apresenta a fundamentação teórica necessária para compreensão do projeto, abordando os conceitos de sistemas de controle de acesso, tecnologia RFID, protocolo de comunicação do módulo RDM6300, microcontrolador ESP8266 e a plataforma Firebase. Essa base teórica é essencial para entender as decisões técnicas tomadas durante o desenvolvimento.
+
+O Capítulo \ref{Cap:TrabalhosRelacionados} discute trabalhos relacionados encontrados na literatura, comparando diferentes abordagens para modernização de sistemas legados e integração de dispositivos IoT. São analisadas soluções comerciais e acadêmicas, destacando suas vantagens e limitações.
+
+O Capítulo \ref{Cap:Problema} define formalmente o problema abordado, detalhando os requisitos funcionais e não-funcionais do sistema proposto. São apresentadas as limitações da controladora original e os objetivos específicos que a solução deve atender.
+
+O Capítulo \ref{Cap:Implementacao} descreve detalhadamente a implementação do sistema, desde a análise inicial da controladora SA-202 até a integração final com o Firebase. São apresentados os algoritmos desenvolvidos, os esquemas de conexão e os desafios técnicos superados durante o desenvolvimento.
+
+O Capítulo \ref{Cap:ExperimentosResultados} apresenta os experimentos realizados para validar a solução proposta, incluindo testes de leitura RFID, integração com Firebase, operação paralela e testes de estresse. Os resultados são analisados quantitativamente e comparados com sistemas similares.
+
+Finalmente, o Capítulo \ref{Cap:Conclusao} apresenta as conclusões do trabalho, destacando as contribuições realizadas, as limitações identificadas e sugestões para trabalhos futuros. São discutidas as lições aprendidas e a aplicabilidade da solução em contextos mais amplos.
+
+\section{Considerações Sobre o Desenvolvimento}
+
+Durante o desenvolvimento deste projeto, foi fundamental manter o foco na praticidade e viabilidade da solução. A decisão de utilizar componentes de baixo custo e amplamente disponíveis no mercado nacional foi estratégica para garantir a replicabilidade do projeto. O Arduino Uno\footnote{Microcontrolador baseado no ATmega328P, amplamente utilizado em projetos de prototipagem.} e o ESP8266\footnote{Módulo Wi-Fi com microcontrolador integrado, desenvolvido pela Espressif Systems.}, por exemplo, são plataformas consolidadas com vasta documentação e suporte da comunidade, o que facilita tanto o desenvolvimento quanto a manutenção futura.
+
+A escolha do Firebase\footnote{Plataforma de desenvolvimento de aplicações móveis e web da Google, que oferece banco de dados em tempo real e hospedagem.} como plataforma de armazenamento em nuvem também foi cuidadosamente considerada. Além de oferecer um plano gratuito adequado para projetos de pequena escala, o Firebase proporciona APIs bem documentadas, segurança robusta e ferramentas de análise integradas. Essas características tornam a plataforma ideal para aplicações IoT que requerem processamento e armazenamento de dados em tempo real.
+
+É importante ressaltar que este trabalho não pretende substituir sistemas comerciais de alta complexidade, mas sim demonstrar que é possível adicionar funcionalidades modernas a sistemas existentes com investimento mínimo. Essa abordagem é particularmente relevante em um contexto onde muitas organizações possuem infraestrutura legada funcional, mas carecem de recursos para modernização completa.
+
+O desenvolvimento deste projeto também revelou a importância da documentação técnica e do compartilhamento de conhecimento. Muitos dos desafios enfrentados poderiam ter sido evitados com melhor documentação dos componentes utilizados, especialmente considerando as barreiras linguísticas encontradas. Por isso, este trabalho busca não apenas apresentar uma solução técnica, mas também servir como referência documentada para futuros projetos similares.

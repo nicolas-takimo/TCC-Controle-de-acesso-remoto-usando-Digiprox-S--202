@@ -1,0 +1,69 @@
+%%
+%% Capítulo 7: Conclusões
+%%
+
+\mychapter{Conclusão}
+\label{Cap:Conclusao}
+
+Este trabalho apresentou o desenvolvimento de um sistema de controle de acesso com RFID integrado ao Firebase, demonstrando uma solução viável para modernização de sistemas legados sem comprometer sua funcionalidade original. Ao longo do projeto, desde a análise inicial da controladora DigiProx SA-202 até a implementação final com o módulo ESP8266, foi possível criar uma solução robusta que atende às necessidades de monitoramento remoto e registro de acessos em tempo real.
+
+O desenvolvimento do sistema enfrentou desafios técnicos significativos, especialmente na tentativa inicial de integração direta com o microcontrolador da controladora existente. A impossibilidade de decodificar o protocolo proprietário e as barreiras técnicas encontradas, como a documentação em idioma chinês e a necessidade de equipamentos especializados não disponíveis no Brasil, levaram à adoção de uma abordagem alternativa que se mostrou ainda mais eficaz. A solução de interceptação paralela do sinal RFID preservou completamente a integridade do sistema original enquanto adicionava as funcionalidades desejadas.
+
+\section{Contribuições do Trabalho}
+
+A principal contribuição deste trabalho demonstrou com sucesso a viabilidade de modernizar sistemas de controle de acesso legados através de uma abordagem não invasiva e de baixo custo. Os testes realizados em bancada, utilizando 25 cartões RFID com códigos impressos, validaram a precisão e confiabilidade do sistema. A solução implementada, utilizando componentes acessíveis e tecnologias open source, oferece uma alternativa prática para instituições que necessitam adicionar conectividade e capacidades de monitoramento remoto aos seus sistemas existentes, sem o investimento significativo que seria necessário para uma substituição completa. A solução implementada oferece várias melhorias em relação à solução original. A capacidade de armazenar todos os registros de acesso na nuvem elimina as limitações de memória local das controladoras tradicionais, que geralmente mantêm apenas os últimos eventos. Além disso, o acesso remoto aos dados através do Firebase permite o monitoramento em tempo real de múltiplos pontos de acesso, facilitando a gestão centralizada de segurança.
+
+A implementação de uma interface web no ESP8266 também representa uma contribuição importante, fornecendo uma forma simples e acessível de verificar o status do sistema e realizar testes sem a necessidade de software especializado. Durante os testes em bancada, essa interface foi validada em diferentes dispositivos e navegadores, comprovando sua versatilidade.
+
+\section{Limitações Identificadas}
+
+Apesar dos resultados positivos obtidos nos testes em bancada, é importante reconhecer as limitações do sistema desenvolvido. A dependência de conectividade Wi-Fi estável representa a principal limitação operacional. Embora tenha sido implementado um sistema de retry para recuperação de falhas temporárias, interrupções prolongadas na conexão podem resultar em perda de dados se o buffer local for excedido.
+
+A distância de leitura das tags RFID, limitada a aproximadamente 5 centímetros, é uma característica intrínseca da tecnologia de 125 kHz utilizada. Essa limitação pode ser inconveniente em algumas aplicações onde seria desejável uma maior distância de leitura, como em cancelas de veículos ou portões de grande porte.
+
+O consumo energético do sistema também merece atenção. Durante os testes de uma semana em operação contínua, observei que os componentes mantiveram temperatura normal, mas a necessidade de alimentação constante torna impraticável a operação por bateria para longos períodos. Isso limita a aplicação do sistema a locais com fornecimento constante de energia elétrica.
+
+\section{Trabalhos Futuros}
+
+Várias melhorias e expansões podem ser implementadas a partir deste trabalho. Uma evolução natural seria o desenvolvimento de um aplicativo móvel nativo, permitindo que administradores gerenciem o sistema diretamente de seus smartphones. Também seria interessante implementar autenticação de dois fatores, combinando o cartão RFID com uma senha ou biometria.
+
+Do ponto de vista técnico, uma abordagem mais sofisticada poderia envolver o desenvolvimento de um sistema que emule completamente o comportamento de uma tag RFID, permitindo que o Arduino gere sinais de radiofrequência para simular diferentes tags para a controladora. Isso eliminaria a necessidade de conexão física com a antena e permitiria um controle ainda mais flexível do sistema. Outra possibilidade seria investigar métodos de engenharia reversa mais avançados para acessar diretamente o firmware da controladora, caso ferramentas apropriadas se tornem disponíveis no mercado brasileiro.
+
+\section{Considerações Finais}
+
+O projeto demonstrou com sucesso que a modernização de sistemas legados de controle de acesso é não apenas viável, mas também economicamente vantajosa quando comparada à substituição completa do sistema. O custo total dos componentes utilizados (Arduino Uno, ESP8266, RDM6300 e componentes auxiliares) foi inferior a R\$ 230,00, representando uma fração do custo de uma nova controladora com recursos similares de conectividade.
+
+A solução implementada utilizou uma abordagem de interceptação paralela, conectando a antena do leitor RDM6300 em paralelo com a antena original da controladora SA-202. Embora essa técnica tenha funcionado perfeitamente para o propósito deste trabalho, é importante destacar que existem métodos mais robustos que poderiam ser explorados, como a emulação completa do protocolo RFID ou a integração direta com o firmware da controladora, caso fosse possível acessá-lo.
+
+A experiência adquirida durante o desenvolvimento revelou a importância da flexibilidade na abordagem de problemas técnicos. A mudança de estratégia, da tentativa de integração direta para a interceptação paralela, demonstrou que soluções criativas podem superar limitações aparentemente intransponíveis. Essa lição é particularmente relevante no contexto da Internet das Coisas, onde frequentemente é necessário integrar dispositivos de diferentes gerações e tecnologias.
+
+
+Por fim, este trabalho contribui para a área de sistemas embarcados e IoT ao demonstrar uma metodologia prática para modernização de sistemas legados, podendo servir como referência para projetos similares. A documentação detalhada do processo, incluindo os desafios enfrentados e as soluções adotadas, oferece um guia valioso para outros desenvolvedores que enfrentem problemas semelhantes.
+
+%\section{Encadernação}
+%
+%As propostas de tema e as versões iniciais das teses e dissertações
+%são impressas em lado único da folha e em espaçamento um e meio. Para
+%a encadernação, usa-se geralmente um método simples, tal como espiral
+%na lateral das folhas e capa plástica transparente. O número de cópias
+%é igual ao número de membros da banca e pelo menos mais uma (para o
+%aluno).
+%
+%As versões finais das teses e dissertações são impressas em frente e
+%verso e em espaçamento simples. O número mínimo de cópias é o seguinte:
+%\begin{itemize}
+%\item 3 cópias para o PPgEEC e a UFRN.
+%\item 1 cópia para cada examinador externo que participou da banca.
+%\item ao menos 1 cópia para o aluno (não obrigatória).
+%\item 1 cópia para o orientador (por cortesia, não obrigatória)
+%\end{itemize}
+%
+%Para a encadernação, deve-se adotar uma capa rígida de cor azul para
+%as dissertações de mestrado e de cor preta para as teses de doutorado,
+%ambas com letras douradas. Na capa deve constar o título do
+%trabalho, o autor e o ano da defesa. Se possível, a mesma informação
+%deve ser repetida na lombada do livro.
+%
+%Para as versões finais, também se exige uma cópia eletrônica (formato
+%PDF) do texto, bem como outros dados. Maiores informações podem ser
+%obtidas na página do PPgEEC: \url{http://www.ppgeec.ufrn.br/}

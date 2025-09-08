@@ -1,0 +1,30 @@
+%
+% ********** Resumo
+%
+
+% Usa-se \chapter*, e não \chapter, porque este "capítulo" não deve
+% ser numerado.
+% Na maioria das vezes, ao invés dos comandos LaTeX \chapter e \chapter*,
+% deve-se usar as nossas versões definidas no arquivo comandos.tex,
+% \mychapter e \mychapterast. Isto porque os comandos LaTeX têm um erro
+% que faz com que eles sempre coloquem o número da página no rodapé na
+% primeira página do capítulo, mesmo que o estilo que estejamos usando
+% para numeração seja outro.
+\mychapterast{Resumo}
+
+Este trabalho apresenta o desenvolvimento de um sistema de controle de acesso com RFID integrado ao Firebase, propondo uma solução inovadora para modernização de controladoras legadas sem comprometer sua funcionalidade original. O projeto surgiu da necessidade de adicionar capacidades de Internet das Coisas (IoT) à controladora DigiProx SA-202, que apesar de funcional, carecia de recursos modernos como conectividade, armazenamento em nuvem e monitoramento remoto. A metodologia adotada iniciou com a tentativa de integração direta com o microcontrolador STC8C2K64S4-36I-LQFP32 da controladora existente, mas devido a barreiras técnicas significativas, como documentação em idioma chinês e necessidade de equipamentos especializados não disponíveis no Brasil, foi desenvolvida uma solução alternativa baseada na interceptação paralela dos sinais RFID. O sistema implementado utiliza um módulo RDM6300 para leitura das tags de 125 kHz, um Arduino Uno para processamento inicial dos dados e um ESP8266 para prover conectividade Wi-Fi e comunicação com o Firebase Realtime Database. 
+
+\vspace{1.5ex}
+
+{\bf Palavras-chave}: RFID, Internet das Coisas, Firebase, Controle de Acesso, Sistemas Embarcados, ESP8266, Arduino.
+
+%
+% ********** Abstract
+%
+\mychapterast{Abstract}
+
+This work presents the development of an RFID access control system integrated with Firebase, proposing an innovative solution for modernizing legacy controllers without compromising their original functionality. The project arose from the need to add Internet of Things (IoT) capabilities to the DigiProx SA-202 controller, which despite being functional, lacked modern features such as connectivity, cloud storage, and remote monitoring. The adopted methodology began with an attempt at direct integration with the STC8C2K64S4-36I-LQFP32 microcontroller of the existing controller, but due to significant technical barriers, such as documentation in Chinese and the need for specialized equipment not available in Brazil, an alternative solution based on parallel interception of RFID signals was developed. The implemented system uses an RDM6300 module for reading 125 kHz tags, an Arduino Uno for initial data processing, and an ESP8266 to provide Wi-Fi connectivity and communication with Firebase Realtime Database. 
+
+\vspace{1.5ex}
+
+{\bf Keywords}: RFID, Internet of Things, Firebase, Access Control, Embedded Systems, ESP8266, Arduino.

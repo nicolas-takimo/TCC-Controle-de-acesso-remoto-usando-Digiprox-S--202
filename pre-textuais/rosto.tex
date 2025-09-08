@@ -1,0 +1,77 @@
+%
+% ********** Página de Rosto
+%
+
+% titlepage gera páginas sem numeração
+\begin{titlepage}
+
+\begin{center}
+
+\small
+
+% O comando @{} no ambiente tabular x é para criar um novo delimitador
+% entre colunas que não a barra vertical | que é normalmente utilizada.
+% O delimitador desejado vai entre as chaves. No exemplo, não há nada,
+% de modo que o delimitador é vazio. Este recurso está sendo usado para
+% eliminar o espaço que geralmente existe entre as colunas
+\begin{tabularx}{\linewidth}{@{}l@{}C@{}r@{}}
+% A figura foi colocada dentro de um parbox para que fique verticalmente
+% centralizada em relação ao resto da linha
+\parbox[c]{2cm}{\includegraphics[width=2cm]{pre-textuais/figuras/ufmt}} &
+\begin{center}
+\textsf{\textsc{Universidade Federal de Mato Grosso\\
+Campus Universitário de Várzea Grande\\
+Faculdade de Engenharia\\
+Engenharia de Computação}}
+\end{center} &
+\parbox[c]{2cm}{\includegraphics[width=2.75cm]{pre-textuais/figuras/faeng}}
+\end{tabularx}
+
+% O vfill é um espaço vertical que assume a máxima dimensão possível
+% Os vfill's desta página foram utilizados para que o texto ocupe
+% toda a folha
+\vfill
+
+\LARGE
+
+\textbf{Controle de acesso  remoto usando Digiprox SA 202  }
+
+\vfill
+
+\Large
+
+\textbf{Nicolas Gabriel Rodrigues Pinto}
+
+\vfill
+
+\normalsize
+
+Orientador: Prof. Dr. Fabrício Carvalho
+% Se não houver co-orientador, comente a próxima linha
+%%[2ex] Co-orientador: Prof. Dr. Beltrano Catandura do Amaral
+
+\vfill
+
+\hfill
+\parbox{0.5\linewidth}{\textbf{%
+% Descomente as opções que se aplicam ao seu caso
+%Proposta de Tema para Qualificação}
+Trabalho de Conclusão de Curso}
+%Tese de Doutorado}
+apresentado ao Curso de Engenharia de Computação da FAENG/CUVG/UFMT
+%(área de concentração: Automação e Sistemas)
+(área de concentração: Engenharia de Computação)
+%(área de concentração: Telecomunicações)
+como parte dos requisitos para obtenção do título de Bacharel
+em Engenharia de Computação.}
+%Doutor em Ciências.}
+
+\vfill
+
+\large
+
+Cuiabá, MT, 12 de Setembro de 2025
+
+\end{center}
+
+\end{titlepage}

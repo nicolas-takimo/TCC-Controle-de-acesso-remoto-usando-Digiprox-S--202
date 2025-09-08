@@ -1,0 +1,23 @@
+%%
+%% Capítulo 4: Problema
+%%
+
+\mychapter{Problema}
+\label{Cap:Problema}
+
+A gestão de acesso a ambientes controlados, como os laboratórios da FAENG, carece de soluções mais modernas e conectadas que possibilitem o monitoramento em tempo real das entradas e saídas, bem como a centralização das permissões de acesso. Atualmente, as fechaduras utilizadas nesses espaços — como a DigiProx SA-202, da Intelbras — operam de maneira completamente autônoma e offline. Esse modelo, embora confiável na autenticação por cartões RFID, não possui conectividade com a internet, nem sistema embarcado que permita qualquer tipo de integração direta com bancos de dados ou plataformas de gerenciamento remoto.
+
+Esse cenário gera limitações significativas para a segurança e a gestão dos laboratórios, pois não há como saber, de forma automatizada, quem acessou determinado espaço, em qual horário, nem aplicar regras de acesso específicas por perfil de usuário. Além disso, em caso de incidentes, não há histórico registrado de forma centralizada que permita rastrear o uso dos ambientes.
+
+
+
+\section{Objetivo do Trabalho}
+\label{Sec:objetivo}
+Este trabalho tem como objetivo desenvolver uma solução de controle de acesso remoto, utilizando a controladora DigiProx SA-202 existente integrada a um sistema composto por um Arduino Uno R3 e um módulo ESP8266 NodeMCU com conexão Wi-Fi.
+A proposta consiste em utilizar um leitor RFID RDM6300 conectado em paralelo com a antena original da controladora, permitindo que o Arduino intercepte e processe os dados dos cartões RFID de 125 kHz. O Arduino, através de comunicação serial UART, repassa esses dados ao ESP8266 NodeMCU que, por sua vez, estabelece conexão segura via HTTPS com o Firebase Realtime Database. Por meio dessa comunicação com a nuvem, torna-se possível armazenar os dados e exibi-los em um dashboard de gerenciamento de acessos, permitindo visualização em tempo real e registro histórico de quem entrou e saiu dos laboratórios.
+
+\section{Justificativa}
+\label{Sec:Justificativa}
+A escolha por uma abordagem com Arduino Uno, ESP8266 NodeMCU e Firebase se justifica pelo baixo custo total de aproximadamente R\$ 230,00, simplicidade de implementação e alta capacidade de adaptação a sistemas legados. O Arduino Uno foi escolhido pela sua robustez e facilidade de programação, enquanto o ESP8266 NodeMCU oferece conectividade Wi-Fi integrada com suporte nativo a HTTPS/TLS. Em vez de substituir a controladora existente, o projeto propõe ampliar suas funcionalidades através de uma interceptação paralela não invasiva, mantendo o funcionamento físico original da DigiProx SA-202, mas adicionando uma camada digital de controle e monitoramento em nuvem.
+Essa proposta contribui diretamente para a segurança, a transparência e a eficiência na gestão dos ambientes da FAENG, além de oferecer um modelo replicável para outras instituições que enfrentam desafios semelhantes com equipamentos sem conectividade nativa à internet.
+
