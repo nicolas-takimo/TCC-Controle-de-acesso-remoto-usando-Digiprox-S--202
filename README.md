@@ -3,7 +3,8 @@
 Este repositório contém o código LaTeX do Trabalho de Conclusão de Curso (TCC) de Engenharia de Computação da UFMT.
 
 ## Autor
-- **Nicolas Gabriel Rodrigues Pinto**
+
+- **Nícolas Gabriel Meneses de Jesus**
 - **Orientador:** Prof. Dr. Fabrício Carvalho
 
 ## Sobre o Projeto
@@ -13,6 +14,7 @@ Este trabalho apresenta o desenvolvimento de um sistema de controle de acesso co
 ## Pré-requisitos para Compilação
 
 ### Sistema Linux (Ubuntu/Debian)
+
 ```bash
 sudo apt update
 sudo apt install texlive-full
@@ -22,10 +24,12 @@ sudo apt install texlive-latex-extra
 ```
 
 ### Sistema Windows
+
 - Instale o [MiKTeX](https://miktex.org/download) ou [TeX Live](https://www.tug.org/texlive/)
 - Certifique-se de que os pacotes em português estão instalados
 
 ### Sistema macOS
+
 ```bash
 # Instale o MacTeX
 brew install --cask mactex
@@ -60,6 +64,7 @@ TCCNICOLAS/
 ## Como Compilar
 
 ### Compilação Completa (Recomendada)
+
 Para gerar o PDF final com todas as referências e numeração correta:
 
 ```bash
@@ -71,6 +76,7 @@ pdflatex main.tex
 ```
 
 ### Compilação Rápida (Para testes)
+
 Para compilação rápida durante edição:
 
 ```bash
@@ -78,6 +84,7 @@ pdflatex main.tex
 ```
 
 ### Usando Makefile (se disponível)
+
 ```bash
 make
 ```
@@ -85,6 +92,7 @@ make
 ## Arquivos Gerados
 
 Após a compilação, os seguintes arquivos serão gerados:
+
 - `main.pdf` - Documento final
 - `main.aux` - Arquivo auxiliar
 - `main.bbl` - Bibliografia processada
@@ -96,6 +104,7 @@ Após a compilação, os seguintes arquivos serão gerados:
 ## Figuras
 
 As figuras estão localizadas em `pre-textuais/figuras/` e incluem:
+
 - Diagramas de arquitetura do sistema
 - Fotos dos componentes utilizados
 - Esquemas de conexão
@@ -104,6 +113,7 @@ As figuras estão localizadas em `pre-textuais/figuras/` e incluem:
 ## Dependências LaTeX
 
 O projeto utiliza os seguintes pacotes principais:
+
 - `babel` (português)
 - `inputenc` (UTF-8)
 - `graphicx` (figuras)
@@ -114,24 +124,29 @@ O projeto utiliza os seguintes pacotes principais:
 ## Troubleshooting
 
 ### Erro: "File not found"
+
 - Verifique se todas as figuras estão no diretório correto
 - Confirme que os caminhos nos arquivos `.tex` estão corretos
 
 ### Erro: "Bibliography not found"
+
 - Execute `bibtex main` após a primeira compilação
 - Compile novamente com `pdflatex main.tex`
 
 ### Caracteres especiais não aparecem
+
 - Certifique-se de que o arquivo está salvo em UTF-8
 - Verifique se o pacote `inputenc` está carregado
 
 ### Referências não aparecem
+
 - Execute a sequência completa: pdflatex → bibtex → pdflatex → pdflatex
 
 ## Contato
 
 Para dúvidas sobre o projeto:
-- **Autor:** Nicolas Gabriel Rodrigues Pinto
+
+- **Autor:** Nícolas Gabriel Meneses de Jesus
 - **Orientador:** Prof. Dr. Fabrício Carvalho
 - **Instituição:** UFMT - Universidade Federal de Mato Grosso
 
